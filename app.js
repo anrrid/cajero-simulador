@@ -1,7 +1,8 @@
 let availableMoney = 0.0;
 let transactions = [];
 const h1CurrentAmount = document.getElementById("h1_current_amount");
-const divHistory = document.getElementById("div_history")
+const divHistory = document.getElementById("div_history");
+const select = document.getElementById("select");
 
 class Operation {
     constructor(operationName, operationAmount, toName) {
@@ -38,8 +39,23 @@ document.getElementById("btn_send").addEventListener("click", function () {
 })
 
 document.getElementById("btn_history").addEventListener("click", function () {
+    let filteredArray;
+    switch (select.value) {
+        case "deposit":
+            filteredArray = transactions.filter(transaction => transaction.operationName == "Depositó");
+            break;
+        case "withdraw":
+            filteredArray = transactions.filter(transaction => transaction.operationName == "Retiró");
+            break;
+        case "send":
+            filteredArray = transactions.filter(transaction => transaction.operationName == "Envió");
+            break;
+        default:
+            filteredArray = transactions
+    }
+
     divHistory.innerHTML = ''
-    transactions.forEach(function (transaction) {
+    filteredArray.forEach(function (transaction) {
         const p = document.createElement('p');
         p.innerText = transaction.getOperation();
         divHistory.appendChild(p)

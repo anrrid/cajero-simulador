@@ -9,10 +9,19 @@
 </head>
 
 <body>
-    <input id="btn_deposit" type="button" value="Deposit">
-    <input id="btn_withdraw" type="button" value="Withdraw">
-    <input id="btn_send" type="button" value="Send">
-    <input id="btn_history" type="button" value="History">
+    <input id="btn_deposit" type="button" value="Depositar">
+    <input id="btn_withdraw" type="button" value="Retirar">
+    <input id="btn_send" type="button" value="Enviar">
+    <p>Seleccione el historial de que operaciones quiere ver:</p>
+
+    <select id="select" name="select">
+        <option value="history">Todas las operaciones</option>
+        <option value="deposit">Depositos</option>
+        <option value="withdraw">Extracciones</option>
+        <option value="send">Transferencias</option>
+    </select>
+
+    <input id="btn_history" type="button" value="Imprimir historial">
 
 
     <h1 id="h1_current_amount">Dinero actual:</h1>
