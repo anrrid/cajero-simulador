@@ -162,6 +162,11 @@ footer div a img {
         justify-content: center;
         margin-bottom: 12px;
     }
+
+    section {
+        width: auto;
+        margin: 20px;
+    }
 }
 
 /*Responsive/*
