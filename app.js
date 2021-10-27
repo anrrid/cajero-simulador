@@ -116,7 +116,7 @@ function saveOperation(operation) {
 const showOperation = () => {
 
     if (localStorage.getItem("transactionsList") == null) {
-        console.log("No hay operaciones registrado");
+        console.log("No hay residentes registrado");
     } else {
         const data = JSON.parse(localStorage.getItem("transactionsList"))
         console.log(data);
