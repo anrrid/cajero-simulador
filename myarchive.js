@@ -1,7 +1,10 @@
+//JQuery for index
+
 $("#print").prepend(`<h1>Tu monedero virtual en un solo paso</h1>
                   <p>Es muy sencillo comencémos</p>`);
 
 
+//button directing to operations.html
 $('#btn1').click(function () {
     window.location = 'operations.html';
 });
@@ -14,7 +17,7 @@ $("button").css("border-radius", "3px");
 $("button").css("font-size", "15px");
 $("button").css("box-shadow", "inset 0 1px 0 #80B0FB");
 
-//url para la API//
+//url for API//
 
 const url = "https://www.dolarsi.com/api/api.php?type=valoresprincipales"
 

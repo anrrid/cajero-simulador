@@ -1,26 +1,10 @@
+//Generate objects from operations
 class TotalMoney {
     constructor(money) {
         this.money = money;
     }
 }
 
-//Save the total available money in localStorage
-const oldTotalMoney = JSON.parse(localStorage.getItem("availableMoney"));
-let availableMoney = null
-if (oldTotalMoney == null) {
-    availableMoney = new TotalMoney(0.0)
-    console.log(true)
-} else {
-    availableMoney = oldTotalMoney
-    console.log(false)
-}
-
-let transactions = [];
-const h1CurrentAmount = document.getElementById("h1_current_amount");
-const divHistory = document.getElementById("div_history");
-const select = document.getElementById("select");
-
-//Generate objects from operations
 class Operation {
     constructor(operationName, operationAmount, toName) {
         this.operationName = operationName;
@@ -37,7 +21,31 @@ class Operation {
     }
 }
 
-setCurrentAmountText()
+let transactions = [];
+const h1CurrentAmount = document.getElementById("h1_current_amount");
+const divHistory = document.getElementById("div_history");
+const select = document.getElementById("select");
+
+//Save the total available money in localStorage
+const oldTotalMoney = JSON.parse(localStorage.getItem("availableMoney"));
+let availableMoney = null
+if (oldTotalMoney == null) {
+    availableMoney = new TotalMoney(0.0)
+    console.log(true)
+} else {
+    availableMoney = oldTotalMoney
+    console.log(false)
+}
+
+const showOperation = () => {
+
+    if (localStorage.getItem("transactionsList") == null) {
+    } else {
+        const data = JSON.parse(localStorage.getItem("transactionsList"))
+    }
+
+}
+
 
 //listeners for button events
 
@@ -83,6 +91,8 @@ document.getElementById("btn_history").addEventListener("click", function () {
     });
 })
 
+setCurrentAmountText()
+
 //Modify the text to display in HTML about the value of money available
 
 function setCurrentAmountText() {
@@ -113,16 +123,7 @@ function saveOperation(operation) {
     }
 }
 
-const showOperation = () => {
 
-    if (localStorage.getItem("transactionsList") == null) {
-        console.log("No hay residentes registrado");
-    } else {
-        const data = JSON.parse(localStorage.getItem("transactionsList"))
-        console.log(data);
-    }
-
-}
 
 //Function that takes money's worth to withdraw.
 function withdrawMoney(amount) {
